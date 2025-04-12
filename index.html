@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DAG Visualization</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>DAG Visualization for Three-Address Code</h1>
+        
+        <div class="input-section">
+            <h2>Enter Instructions</h2>
+            <textarea id="instructions" rows="10" placeholder="Enter instructions (one per line)&#10;Example:&#10;t1 := a + b&#10;t2 := t1 - e&#10;t3 := a + b"></textarea>
+            <button onclick="processInstructions()">Generate DAG</button>
+        </div>
+
+        <div class="results-section">
+            <div class="visualization">
+                <h2>DAG Visualization</h2>
+                <div id="dag-image"></div>
+            </div>
+
+            <div class="sequence">
+                <h2>Optimal Sequence</h2>
+                <div id="sequence-list"></div>
+            </div>
+        </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+</body>
+</html> 
